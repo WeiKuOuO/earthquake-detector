@@ -1,0 +1,1 @@
+  start: lt --port 7777 --subdomain earthquake
