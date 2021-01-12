@@ -23,10 +23,14 @@ request('https://opendata.cwb.gov.tw/api/v1/rest/datastore/E-A0015-001?Authoriza
         padding: 5px;
       }
       </style>
+      <text>${obj.records.earthquake[0].reportContent}</text>
       <ul>
         <li>Earthquake Number#${obj.records.earthquake[0].earthquakeNo}</li>
-        <li>Time: ${obj.records.earthquake[0].earthquakeInfo.originTime}</li>
-        <li>Depth: ${obj.records.earthquake[0].earthquakeInfo.depth.value} km</li>
+        <li>時間: ${obj.records.earthquake[0].earthquakeInfo.originTime}</li>
+        <li>深度: ${obj.records.earthquake[0].earthquakeInfo.depth.value} km</li>
+        <li>震央: ${obj.records.earthquake[0].earthquakeInfo.epiCenter.location}</li>
+        <li>經緯: [${obj.records.earthquake[0].earthquakeInfo.epiCenter.epiCenterLat.value}, ${obj.records.earthquake[0].earthquakeInfo.epiCenter.epiCenterLon.value}]</li>
+        <li>芮氏規模: ${obj.records.earthquake[0].earthquakeInfo.magnitude.magnitudeValue}</li>
       </ul>
         <img src="${obj.records.earthquake[0].shakemapImageURI}" alt= "rpoertImage1" width="450px" height="600px">
       </body>
