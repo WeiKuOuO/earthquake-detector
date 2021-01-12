@@ -1,0 +1,19 @@
+<html>
+<body>
+
+<h2>Use JavaScript to Change Text</h2>
+<p>This example writes "Hello JavaScript!" into an HTML element with id="demo":</p>
+
+<p id="demo"></p>
+
+<script>
+
+const request = require('request');
+request('https://opendata.cwb.gov.tw/api/v1/rest/datastore/E-A0015-001?Authorization=CWB-6D381C37-6985-43CE-920B-D3138F278E5B&areaName=%E9%AB%98%E9%9B%84%E5%B8%82', function (error, response, body) {
+  const obj = JSON.parse(body)
+});
+document.getElementById("demo").innerHTML = obj.records.earthquake[0].reportContent;
+</script> 
+
+</body>
+</html>
