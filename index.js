@@ -11,6 +11,7 @@ request('https://opendata.cwb.gov.tw/api/v1/rest/datastore/E-A0015-001?Authoriza
   http.createServer(function (req, res) {
     var content = `
     <html>
+    <title>最新地震情報</title>
       <body>
       <style>
       ul {
@@ -27,7 +28,7 @@ request('https://opendata.cwb.gov.tw/api/v1/rest/datastore/E-A0015-001?Authoriza
         <li>Time: ${obj.records.earthquake[0].earthquakeInfo.originTime}</li>
         <li>Depth: ${obj.records.earthquake[0].earthquakeInfo.depth.value} km</li>
       </ul>
-        <img src="${obj.records.earthquake[0].shakemapImageURI}" alt= "rpoertImage1" width="600px" height="800px">
+        <img src="${obj.records.earthquake[0].shakemapImageURI}" alt= "rpoertImage1" width="450px" height="600px">
       </body>
     </html>
     `
